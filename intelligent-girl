@@ -30,7 +30,7 @@ Number of even numbers from 6 to end of the string is 6 so the result of index 4
 
 :: CODE ::
 
-//Incomplete
+//Done
 
 /******************************************************************************
 
@@ -45,15 +45,16 @@ import java.util.Arrays;
 
 public class Main
 {
-    
+    //Checks if a character is digit or not.
     private static boolean isADigit(char c) 
     {
         return  (c >= '0' && c <= '9');
     }
-    
+  
+    //counts if how many even digits are there in a string of digits. 
     public static int countEvenNumber(char[] input)
     {
-        
+        //System.out.println(input);
         
         int result=0;
         
@@ -68,28 +69,35 @@ public class Main
         return result;
     }
     
-    
+    //slices an array by 1 character from begining.
     public static char[] sliceArrayByOneElement(char[] ip)
     {
         return Arrays.copyOfRange(ip,1,ip.length);
     }
+    
+    
+    //main method
 	public static void main(String[] args) {
 	    
 	    String input="574674546476";
+	    int inputLength=input.length();
 	    char inputArray[]=input.toCharArray();
+	   
+	    String finalOutput=" ";
 	    
-	    String finalOutput;
-	    
-	    for(int i=0;i<inputArray.length;i++)
+	    for(int i=0;i<inputLength;i++)
 	    {
-	        
-	            System.out.println(countEvenNumber(sliceArrayByOneElement(inputArray)));
-	        
+	      
+	            finalOutput=finalOutput+" "+countEvenNumber(inputArray);
+	            
+	          inputArray=sliceArrayByOneElement(inputArray);
 	    }
-	
+	    
+	    System.out.println(input);
+	    System.out.println(finalOutput);
 		
 		
-		System.out.println(sliceArrayByOneElement(inputArray));
+		//System.out.println(sliceArrayByOneElement(inputArray));
 	
 		
 		
